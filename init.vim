@@ -40,7 +40,10 @@ let g:airline_theme='wombat'
 command! -nargs=0 F :CocCommand prettier.forceFormatDocument 
 command! -nargs=0 EF :CocCommand eslint.executeAutofix
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR :cal CocActionAsync('runCommand', 'editor.action.organizeImport')
+nnoremap <leader>s :CocCommand prettier.forceFormatDocument<CR>:w 
+nnoremap <leader>f :Files<CR>
+nmap <silent>nf :NERDTreeFind
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
