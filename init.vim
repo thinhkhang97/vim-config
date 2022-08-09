@@ -20,7 +20,8 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 syntax enable
-colors gruvbox
+:set background=dark
+colorscheme gruvbox
 
 :set number
 :set relativenumber
@@ -41,9 +42,9 @@ command! -nargs=0 F :CocCommand prettier.forceFormatDocument
 command! -nargs=0 EF :CocCommand eslint.executeAutofix
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR :cal CocActionAsync('runCommand', 'editor.action.organizeImport')
-nnoremap <leader>s :CocCommand prettier.forceFormatDocument<CR>:w 
+nnoremap <leader>s :CocCommand prettier.forceFormatDocument<CR>:w<CR>
 nnoremap <leader>f :Files<CR>
-nmap <silent>nf :NERDTreeFind
+nmap <silent>nf :NERDTreeFind<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
